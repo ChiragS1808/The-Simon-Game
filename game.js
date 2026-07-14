@@ -96,7 +96,6 @@ gamestarted=false;
 
 //restart game in middle of it
 $(".restart").on("click",function(){
- $("h1").text("game re-started");
+ $("h1").text("Press any key to restart");
     restart(); 
 })
-// restart function is working properly but making it caused some sound problem now game doesn't make any sound
