@@ -10,7 +10,7 @@ let buttonColours = ["red", "blue", "green", "yellow"];
 //game starts from here or restart game in middle of it
 $(".restart").on("click",function(){
     if(gamestarted){
- $("h1").text("press any key to ");
+ $("h1").text("press restart ");
     restart(); }else{
 nextSequence();
    $("h1").text("level "+level);
