@@ -7,16 +7,20 @@ let gamestarted = false;
 let buttonColours = ["red", "blue", "green", "yellow"];
 
 
-//game starts from here 
-$(document).on("keydown",function(){
-    if(!gamestarted){
-    gamestarted=true;
-   nextSequence();
+//game starts from here or restart game in middle of it
+$(".restart").on("click",function(){
+    if(gamestarted){
+ $("h1").text("press any key to ");
+    restart(); }else{
+nextSequence();
    $("h1").text("level "+level);
    $(".restart").css("display","inline-block"); 
    $(".restart").html("<h3>restart</h3>"); 
+      gamestarted=true;
     }
-});
+})
+
+
 
 function nextSequence(){
     userClickedPattern = [];
@@ -53,7 +57,7 @@ let  userChosenColor= $(this).attr("id");
 animatepress(this);
 checkanswer(userClickedPattern.length-1);
     }else{
-     $("h1").text("game over press any key to restart");
+     $("h1").text("Press to restart");
         playaudio("wrong");
         $("body").addClass("game-over");
 setTimeout(() => {
@@ -78,7 +82,7 @@ if(userClickedPattern[currentlevel]===gamePattern[currentlevel]){
     };
     
 }else{
-  $("h1").text("gameover press any key to play again");
+  $("h1").text("gameover press restart to play again");
   playaudio("wrong");
 $("body").addClass("game-over");
 setTimeout(() => {
@@ -94,8 +98,8 @@ gamestarted=false;
  gamePattern=[];
 }
 
-//restart game in middle of it
-$(".restart").on("click",function(){
- $("h1").text("Press any key to restart");
-    restart(); 
-})
+
+//improved restart event listener by adding if else the previous code is in if true curly bracket.
+//changed css of restart class display from none to inline block
+//changed restart h3 empty to start text
+//changed h1 to press start 
