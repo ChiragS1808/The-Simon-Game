@@ -57,7 +57,7 @@ let  userChosenColor= $(this).attr("id");
 animatepress(this);
 checkanswer(userClickedPattern.length-1);
     }else{
-     $("h1").text("Press to restart");
+       $("h1").text("Press to start/restart");
         playaudio("wrong");
         $("body").addClass("game-over");
 setTimeout(() => {
