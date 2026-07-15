@@ -12,15 +12,15 @@ $(".restart").on("click",function(){
     if(gamestarted){
  $("h1").text("press restart ");
     restart(); }else{
-nextSequence();
-   $("h1").text("level "+level);
    $(".restart").css("display","inline-block"); 
    $(".restart").html("<h3>restart</h3>"); 
       gamestarted=true;
+      setTimeout(() => {
+        nextSequence();
+      }, 400);
+      
     }
-})
-
-
+});
 
 function nextSequence(){
     userClickedPattern = [];
