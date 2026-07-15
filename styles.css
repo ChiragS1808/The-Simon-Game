@@ -58,7 +58,7 @@ body {
   background-color: aliceblue;
  border: 10px solid black;
  border-radius: 20%;
- display:none;
+ display:inline-block;
 } 
 .restart h3{
     font-family: 'Press Start 2P', cursive;
